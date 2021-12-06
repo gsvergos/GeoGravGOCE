@@ -1,0 +1,221 @@
+===================================================================================================
+					GeoGravGOCE - How to Run the App with the sample data
+===================================================================================================
+Version: 1.0.0
+Developed by GravLab Team, AUTh, 2020
+Contact: vergos@topo.auth.gr
+-------------------------------------------------------------------------------------------------------------
+-To run the app, find the GeoGravGOCE icon in the MATLAB Toolstrip 'APPS'.
+-If you don't have your own input files, you can use the provided sample datasets to run the app.
+Sample, 1-day, data can be downloaded from the GeoGravGOCE webpage at http://olimpia.topo.auth.gr/GeoGravGOCE/
+-This is an example of how you can use our app with the sample data.
+-------------------------------------------------------------------------------------------------------------
+
+**In the SGG Pre-processing tab, load the data attached in the sequence folder: 
+ sample data/ Inputs/ 1st tab_ SGG Pre-Processing.
+
+(1) In the EGG_NOM_2 pushbutton, load the "GO_CONS_EGG_NOM_2__20100101T000000_20100101T235959_0101.sgg" file.
+(2) In the SST_PSO_2 pushbutton, load the "GO_CONS_SST_PSO_2__20091231T235945_20100101T235944_0001.kin" file
+(3) Click on the Calculate SGG pushbutton and wait for the dataset processing. 
+    The main outputs of this button are a file called "SGG_GRF.mat" and one called "SGG_GRF_Report.txt".
+    (These outputs are exported automatically to the SGG Pre-Processing folder).
+
+-Additional output options are enabled:
+(4) Click on the Statistics Vij(.mat) & Report(.txt) pushbutton, and you will receive a file called stats_Vij_GRF.mat
+    and a file called stats_Vij_GRF_Report.txt. 
+    (These outputs are exported automatically to the SGG Pre-Processing/Statistics_Vij_GRF folder).
+(5) Click on the Gravity Gradients pushbutton, and you will receive two figures called Vij_GRF__01-Jan-2010
+    in .jpeg and .fig file formats. 
+    (These outputs are exported automatically to the SGG Pre-Processing\Gravity Gradients GRF folder).
+(6) Click on the GOCE Orbit Track pushbutton, and you will receive two maps called GOCE Orbit Track_01-Jan-2010
+    in .jpeg and .fig file formats.
+    (These outputs are exported automatically to the SGG Pre-Processing\GOCE Orbit Track folder).
+(7) Click on the GOCE Altitude pushbutton, and you will receive two figures called Altitude_GOCE_GRF_01-Jan-2010
+    in .jpeg and .fig file formats.
+    (These outputs are exported automatically to the SGG Pre-Processing\GOCE Altitude folder).
+(8) Click on the Create Input Format (lat,lon,h) pushbutton, and you will receive a file called data-01-Jan-2010.txt
+    (This output is exported automatically to the SGG Pre-Processing\Input_for_GrafLab folder).
+(9) Click on the RUN GrafLab pushbutton:
+    Step 1: Load the GO_CONS_GCF_2_TIM_R6.gfc1
+    Step 2: Enter the required parameters and click OK
+    Step 3: Select the file data-01-Jan-2010.txt located on the SGG Pre-Processing\Input_for_GrafLab folder.
+    When the computation has been finished, you will receive a file called
+    a1_GO_CONS_GCF_2_TIM_R6__nmax_150__data-01-Jan-2010.txt
+    and one called a1_GO_CONS_GCF_2_TIM_R6__nmax_150__data-01-Jan-2010_Report.txt.
+    (These outputs are exported automatically to the SGG Pre-Processing folder).
+-------------------------------------------------------------------------------------------------------------
+
+
+**In the GGM transformation: LNOF to GRF tab, load the data attached in the sequence folder: 
+ sample data/ Inputs/ 2nd tab_ GGM transformation LNOF to GRF.
+
+(1) In the GGM file pushbutton, load the "a1_GO_CONS_GCF_2_TIM_R6__nmax_150__data-01-Jan-2010.txt" file.
+(2) In the Quaternions (PSO_2_QAT) pushbutton,load the "GO_CONS_SST_PSO_2__20091231T235945_20100101T235944_0001.qat" file.
+(3) Click on the Transform LNOF to GRF pushbutton and wait for the dataset processing. 
+    The main outputs of this button are a file called GGM_LNOF_2_GRF.mat and one called GGM_LNOF_2_GRF_Report.txt. 
+    (These outputs are exported automatically to the GGM Transformations folder).
+
+-Additional output options are enabled:
+(4) Click on the Statistics GGM Vij in GRF(.mat) & Report pushbutton, and you will receive  a file called
+    stats_GGM_Vij_GRF.mat and a file called stats_GGM_Vij_GRF_Report.txt.
+    (These outputs are exported automatically to the GGM Transformations\Statistics_Vij_GGM_GRF folder).
+(5) Click on the Figures of Vij in GRF pushbutton, and you will receive two figures called GG_GGM_GRF_01-Jan-2010
+    in .jpeg and .fig file formats.
+    (These outputs are exported automatically to the GGM Transformations\Gravity Gradients GGM GRF folder).
+-------------------------------------------------------------------------------------------------------------
+
+
+**In the Filtering tab, load the data attached in the sequence folder: 
+ sample data/ Inputs/ 3rd tab_ filtering.
+
+****In Load Reduced Data panel:
+
+(A) In the Reduced Data pushbutton, load the option_1_user_data.mat, located on the Load option_1 folder.
+--- or ---
+(B) In the [SGG_GRF] & [GGM_LNOF_2_GRF] pushbutton, load the SGG_GRF.mat and then the GGM_LNOF_2_GRF.mat,
+    located on the Load option_2 folder.
+--- or ---
+(C) In the [SGG_GRF] & [GGM gravitational tensor] pushbutton, load the SGG_GRF.mat and then the
+    Option_3_GGM_tensor__.mat, located on the Load option_3 folder.
+
+
+****In Select Filtering Method panel:
+
+-FIR
+(1) In the FIR pushbutton, in the dialog box, input the N=1500 filter order.
+    The main outputs of this button are a file called Vij_FIR.mat and one called Vij_FIR_Report.txt
+    (These outputs are exported automatically to the FIR folder).
+(2) Click on the Filtered Reduced SGG pushbutton, and you will receive two figures called
+    Filtered_FIR_Vij_GRF_01-Jan-2010 in .jpeg and .fig file formats.
+    (These outputs are exported automatically to the FIR\FIR Filtered Vij GRF folder).
+(3) Click on the PSD pushbutton, and you will receive two figures called PSD_GG_GRF_FIR_1500_01-Jan-2010
+    in .jpeg and .fig file formats.
+    (These outputs are exported automatically to the FIR\PSD FIR filtered Vij GRF folder).
+(4) Click on the Statistics SGG pushbutton, and you will receive a file called stats_filtered_Vij_GRF.mat 
+    and one called stats_filtered_Vij_GRF_Report.txt.
+    (These outputs are exported automatically to the FIR\Statistics_filtered_Vij_GRF folder).
+(5) Click on the Magnitude Response pushbutton to open Matlab's interactive Filter Visualization Tool.
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-IIR
+(1) In the IIR pushbutton, in the dialog box, input the N=3 filter order.
+    The main outputs of this button are a file called Vij_IIR.mat and one called Vij_IIR_Report.txt
+    (These outputs are exported automatically to the IIR folder).
+(2) Click on the Filtered Reduced SGG pushbutton, and you will receive two figures called
+    Filtered_IIR_Vij_GRF_01-Jan-2010 in .jpeg and .fig file formats.
+    (These outputs are exported automatically to the IIR\IIR Filtered Vij GRF folder).
+(3) Click on the PSD pushbutton, and you will receive two figures called PSD_GG_GRF_IIR_3_01-Jan-2010
+    in .jpeg and .fig file formats.
+    (These outputs are exported automatically to the IIR\PSD IIR filtered Vij GRF folder).
+(4) Click on the Statistics SGG pushbutton, and you will receive a file called stats_filtered_Vij_GRF.mat 
+    and one called stats_filtered_Vij_GRF_Report.txt.
+    (These outputs are exported automatically to the IIR\Statistics_filtered_Vij_GRF folder).
+(5) Click on the Magnitude Response pushbutton to open Matlab's interactive Filter Visualization Tool.
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-Wavelet
+(1) Click on the Wavelet pushbutton, to enable the Wavelet filtering process.
+(2) Click on the WL MRA decomposition pushbutton, and you will receive:
+    4 figures in .jpeg and .fig format called: 
+    -Vzz_appproximation_coefficient_1st_orbit_01-Jan-2010	
+    -Vzz_detail_coefficients_d1-d4_1st_orbit_01-Jan-2010
+    -Vzz_detail_coefficients_d4-d8_1st_orbit_01-Jan-2010
+    -Vzz_detail_coefficients_d8-d12_1st_orbit_01-Jan-2010
+    (These outputs are exported automatically to the Wavelets/WL MRA Decomposition/Coefficients folder).
+    & 
+    4 figures in .jpeg and .fig format called: 
+    -PSDs_of_Vzz_a12_1st_orbit_01-Jan-2010.
+    -PSDs_of_Vzz_d1_d4_1st_orbit_01-Jan-2010
+    -PSDs_of_Vzz_d5_d8_1st_orbit_01-Jan-2010
+    -PSDs_of_Vzz_d9_d12_1st_orbit_01-Jan-2010
+    (These outputs are exported automatically to the Wavelets/WL MRA Decomposition/PSDs of coefficients folder).
+(3) Click on the desired checkboxes for reconstruction(e.g. d4,d5,d6,d7).
+(4) Click on the WL MRA reconstruction pushbutton, and you will receive a file called GG_WL.mat and one
+    called GG_WL_Report.txt 
+    (These outputs are exported automatically to the Wavelets folder)   
+(5) Click on the Statistics GG WL(.mat) & Report (.txt) pushbutton, and you will receive a file called
+    stats_GG_WL_MRA_Vij.mat and one called stats_GG_WL_MRA_Vij_Report.
+    (These outputs are exported automatically to the Wavelets/Statistics_GG_WL_MRA folder).
+(6) Click on the GGs after WL MRA pushbutton, and you will receive two figures called GG_Synthesis_01-Jan-2010
+    in .jpeg and .fig format.
+    (These outputs are exported automatically to the Wavelets/WL MRA Reconstruction/Gravity Gradients after WL MRA folder).
+(7) Click on the PSDs of GGs after WL MRA pushbutton and you will receive two figures called
+    PSD_GG_Synthesis_01-Jan-2010 in .jpeg and .fig format.
+    (These outputs are exported automatically to the Wavelets/WL MRA Reconstruction/PSDs after WL MRA folder).
+-------------------------------------------------------------------------------------------------------------
+
+
+**In the RSs Transformations tab, load the data attached in the sequence folder: 
+ sample data/ Inputs/ 4th tab_ RSs Transformations.
+
+-In Transformation GRF to LNOF panel:
+(1) Click on the Load data for GRF to LNOF transformation pushbutton, and load the tab_4_input_GG_in_GRF_to_LNOF.mat file.
+(2) Click on the Transformation GRF to LNOF pushbutton, and you will receive a file called 
+    VLNOF_gradients.mat and one called VLNOF_gradients_Report.txt.
+    (These outputs are exported automatically to the RSs Transformations - to LNOF folder).
+(3) Click on the Statistics of the data in LNOF (.mat) & Report pushbutton, and you will receive a file called
+    stats_GGs_transf_LNOF.mat and one called stats_GGs_transf_LNOF_Report. 
+    (These outputs are exported automatically to the RSs Transformations - to LNOF\Statistics_GGs_in_LNOF).
+(4) Click on the Figures of the data in LNOF pushbutton, and you will receive 4 figures in .jpeg and .fig format
+    called:
+    -GG_LNOF_01-Jan-2010
+    -GG_LNOF_02-Jan-2010
+    -GG_LNOF_03-Jan-2010
+    -GG_LNOF_04-Jan-2010
+    (These outputs are exported automatically to the RSs Transformations-to LNOF\Gravity Gradients in LNOF folder)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-In Transformation LNOF to GRF panel:
+(1) Click on the Load data for LNOF to GRF transformation pushbutton, and load the tab_4_input_GG_in_LNOF_to_GRF.mat file.
+(2) Click on the Transformation LNOF to GRF pushbutton, and you will receive a file called VGRF_gradients.mat
+    and one called VGRF_gradients_Report.txt.
+    (These outputs are exported automatically to the RSs Transformations - to GRF folder).
+(3) Click on the Statistics of the data in GRF (.mat) & Report pushbutton, and you will receive a file called
+    stats_GGs_transf_GRF.mat and one called stats_GGs_transf_GRF_Report.
+    (These outputs are exported automatically to the RSs Transformations - to GRF\Statistics_GGs_in_GRF folder).  
+(4) Click on the Figures of the data in GRF pushbutton, and you will receive 4 figures in .jpeg and .fig format
+    called:
+    -GG_GRF_01-Jan-2010
+    -GG_GRF_02-Jan-2010
+    -GG_GRF_03-Jan-2010
+    -GG_GRF_04-Jan-2010
+    (These outputs are exported automatically to the RSs Transformations - to GRF\Gravity Gradients in GRF folder)
+
+------------------------------------------------------ end -------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
